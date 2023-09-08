@@ -22,4 +22,8 @@ function forceLandscape() {
     }
 }
 
-window.addEventListener('resize', forceLandscape);
+//window.addEventListener('resize', forceLandscape);
+
+function unityStarted() {
+    forceLandscape();
+}
