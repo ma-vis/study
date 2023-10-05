@@ -87,9 +87,14 @@
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
-
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
+		if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+			canvas.style.width = '100%';
+			canvas.style.height = '100%';
+		} else 
+		{
+			canvas.style.width = window.innerWidth + 'px';
+			canvas.style.height = window.innerHeight + 'px';
+		}
 
         watchScreen();
       } else {
