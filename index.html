@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Bis na CCXP</title>
+    <title>Unity WebGL Player | BisCCXP</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -18,9 +18,9 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <!--<div id="unity-webgl-logo"></div>-->
+        <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <!--<div id="unity-build-title">Bis na CCXP</div>-->
+        <div id="unity-build-title">BisCCXP</div>
       </div>
     </div>
     <script>
@@ -63,7 +63,7 @@
         codeUrl: buildUrl + "/WebGL Builds.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DXGameworks",
-        productName: "Bis na CCXP",
+        productName: "BisCCXP",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -83,15 +83,13 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-
-        watchScreen();
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -116,21 +114,6 @@
         });
       };
       document.body.appendChild(script);
-
-      var sWidth = window.innerWidth;
-      var sHeight = window.innerHeight;
-      function watchScreen() {
-        requestAnimationFrame(watchScreen);
-        if(sWidth !== window.innerWidth || sHeight != window.innerHeight){
-          if(window.onOrientationChange) {
-            window.onOrientationChange(window.orientation);
-          }
-          sWidth = window.innerWidth;
-          sHeight = window.innerHeight;
-          canvas.style.width = sWidth + 'px';
-          canvas.style.height = sHeight + 'px';
-        }
-      }
     </script>
   </body>
 </html>
