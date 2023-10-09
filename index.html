@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1920 height=1080></canvas>
+      <canvas id="unity-canvas" width=1280 height=720></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -56,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/10.loader.js";
+      var loaderUrl = buildUrl + "/TestLink.loader.js";
       var config = {
-        dataUrl: buildUrl + "/10.data.unityweb",
-        frameworkUrl: buildUrl + "/10.framework.js.unityweb",
-        codeUrl: buildUrl + "/10.wasm.unityweb",
+        dataUrl: buildUrl + "/TestLink.data.unityweb",
+        frameworkUrl: buildUrl + "/TestLink.framework.js.unityweb",
+        codeUrl: buildUrl + "/TestLink.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DXGameworks",
         productName: "Bis na CCXP",
@@ -95,8 +95,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1920px";
-        canvas.style.height = "1080px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
       }
 
       loadingBar.style.display = "block";
